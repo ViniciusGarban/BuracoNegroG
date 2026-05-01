@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>AquaTech | Cadastro</title>
+  <title> Buraco Negro | Cadastro</title>
 
   <script src="./js/sessao.js"></script>
 
@@ -17,26 +17,23 @@
 
 <body onload="listar()">
   <!--header inicio-->
-  <div class="header">
-    <div class="container">
-      <h1 class="titulo">AquaTech</h1>
-      <ul class="navbar">
-        <li>
-          <a href="index.html">Inicial</a>
-        </li>
-        <li>
-          <a href="simulador.html">Simulador</a>
-        </li>
-        <li>|</li>
-        <li>
-          <a href="login.html">Login</a>
-        </li>
-        <li class="agora">
-          <a href="#">Cadastro</a>
-        </li>
-      </ul>
+ <header class="cabecalho">
+  <div class="logo">Buracos Negros</div>
+
+  <nav class="menu">
+    <a href="index.html">Início</a>
+    <a href="index.html#abismo">O Abismo</a>
+    <a href="index.html#retorno">Horizonte</a>
+
+    <div class="menu-extra">
+      <button onclick="trocarIdioma('pt')">PT</button>
+      <button onclick="trocarIdioma('en')">EN</button>
+
+      <a href="login.html" class="btn-login">Login</a>
+      <a href="cadastro.html" class="btn-login">Cadastro</a>
     </div>
-  </div>
+  </nav>
+</header>
   <!--header fim-->
 
   <div class="login">
@@ -103,6 +100,43 @@
 </html>
 
 <script>
+const reqTamanho = document.getElementById("req-tamanho");
+const reqMaiuscula = document.getElementById("req-maiuscula");
+const reqMinuscula = document.getElementById("req-minuscula");
+const reqEspecial = document.getElementById("req-especial");
+
+senha_input.addEventListener("input", function () {
+  let senha = senha_input.value;
+
+  let temMaiuscula = false;
+  let temMinuscula = false;
+  let temEspecial = false;
+
+  for (let i = 0; i < senha.length; i++) {
+    let letra = senha[i];
+
+    if (letra >= "A" && letra <= "Z") {
+      temMaiuscula = true;
+    }
+
+    if (letra >= "a" && letra <= "z") {
+      temMinuscula = true;
+    }
+
+    if (
+      !(letra >= "A" && letra <= "Z") &&
+      !(letra >= "a" && letra <= "z") &&
+      !(letra >= "0" && letra <= "9")
+    ) {
+      temEspecial = true;
+    }
+  }
+
+  reqTamanho.classList.toggle("valido", senha.length >= 8);
+  reqMaiuscula.classList.toggle("valido", temMaiuscula);
+  reqMinuscula.classList.toggle("valido", temMinuscula);
+  reqEspecial.classList.toggle("valido", temEspecial);
+});
 
   // Array para armazenar empresas cadastradas para validação de código de ativação 
   let listaEmpresasCadastradas = [];
