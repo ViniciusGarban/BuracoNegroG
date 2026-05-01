@@ -467,3 +467,17 @@ width:100px !important;
 .loading-div img {
   width: 45px;
 }
+
+.requisitos p{
+  font-size: 12px;
+  color: red;
+  transition: 0.3s;
+}
+
+.valido{
+  color: #22c55e; /* verde */
+}
+
+.invalido{
+  color: red;
+}
