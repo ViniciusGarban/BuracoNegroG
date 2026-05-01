@@ -286,6 +286,8 @@ h1 span{
     flex-direction: column;
     gap: 16px;
   }
+
+
  .minhoca{
  background:#090909;
 }
@@ -307,7 +309,10 @@ width:100px !important;
 }
 
 
- /* PAGINA LOGIN E CADASTRO!!!!!!!!!!!!!!!!!! */ 
+ 
+}
+/* PAGINA LOGIN E CADASTRO!!!!!!!!!!!!!!!!!! */ 
+ 
  .header {
   height: 80px;
   background: rgba(14, 14, 14, 0.9);
@@ -461,5 +466,4 @@ width:100px !important;
 
 .loading-div img {
   width: 45px;
-}
 }
