@@ -181,3 +181,15 @@
 .link-cadastro a:hover {
   text-decoration: underline;
 }
+
+.logo {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logo:hover {
+  color: #dab9ff;
+  transform: scale(1.05);
+}
+

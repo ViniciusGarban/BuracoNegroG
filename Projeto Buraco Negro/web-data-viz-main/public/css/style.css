@@ -59,6 +59,17 @@ a {
   font-size: 22px;
   font-weight: bold;
 }
+.logo {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logo:hover {
+  color: #dab9ff;
+  transform: scale(1.05);
+}
+
 
 .menu {
   display: flex;
@@ -128,7 +139,12 @@ h1 span{
   border-radius: 8px;
 }
 
-.btn-transparente {
+html {
+  scroll-behavior: smooth;
+}
+
+
+.btn-iniciar {
   background-color: transparent;
   color: #dab9ff;
   border: 1px solid rgba(218, 185, 255, 0.4);
