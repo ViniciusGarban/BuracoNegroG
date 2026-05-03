@@ -165,3 +165,18 @@
 .login {
   margin-top: 100px;
 }
+
+.link-cadastro{
+  margin-top:15px;
+  text-align:center;
+  color:#ccc3d3;
+}
+
+.link-cadastro a{
+  color:#dab9ff;
+  font-weight:bold;
+}
+
+.link-cadastro a:hover{
+  text-decoration:underline;
+}
