@@ -16,8 +16,9 @@
   
 
   <div class="menu-extra">
-    <button onclick="trocarIdioma('pt')">PT</button>
-    <button onclick="trocarIdioma('en')">EN</button>
+    <a href="login.html">PT</a>
+<a href="login-en.html">EN</a>
+
 
     <a href="login.html" class="btn-login">Login</a>
   </div>
@@ -133,37 +134,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-<script>
-function trocarIdioma(idioma){
-
-  if(idioma === 'pt'){
-    document.querySelector('.logo').innerText = 'Buracos Negros';
-
-    document.querySelectorAll('.menu a')[0].innerText = 'Início';
-    document.querySelectorAll('.menu a')[1].innerText = 'O Abismo';
-    document.querySelectorAll('.menu a')[2].innerText = 'Horizonte de Eventos';
-
-    document.querySelector('.hero h1').innerHTML =
-      'Origem do <span>Buraco Negro</span>';
-
-    document.querySelector('.hero p').innerText =
-      'Onde a gravidade conquista a luz e o espaço-tempo revela seus maiores mistérios.';
-
-  }
-
-  if(idioma === 'en'){
-    document.querySelector('.logo').innerText = 'Black Holes';
-
-    document.querySelectorAll('.menu a')[0].innerText = 'Home';
-    document.querySelectorAll('.menu a')[1].innerText = 'The Abyss';
-    document.querySelectorAll('.menu a')[2].innerText = 'Event Horizon';
-
-    document.querySelector('.hero h1').innerHTML =
-      'Origin of the <span>Black Hole</span>';
-
-    document.querySelector('.hero p').innerText =
-      'Where gravity conquers light and spacetime reveals its deepest mysteries.';
-  }
-
-}
-</script>
