@@ -100,6 +100,7 @@ a {
 
 .hero-conteudo {
   max-width: 900px;
+  
 }
 
 .hero h1 {
@@ -110,8 +111,8 @@ a {
 }
 
 h1 span{
-   color: #8b008b;
-   -webkit-text-stroke: 1px #b34db2;
+   color: black;
+   -webkit-text-stroke: 2px white;
 }
 
 .hero p {
