@@ -1,4 +1,4 @@
-🌌 # Project: Black Holes
+## 🌌  Project: Black Holes
 
 This project consists of the development of a website with an astronomical theme, focused on presenting concepts related to black holes in a structured and visual way.
 
