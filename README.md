@@ -1,4 +1,4 @@
-## INGLÊS 
+## ENGLISH
 
 ## 🌌  Project: Black Holes
 
