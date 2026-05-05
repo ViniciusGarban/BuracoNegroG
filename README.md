@@ -36,7 +36,7 @@ This project was developed for academic purposes, aiming to apply concepts of we
 
 
 
- ##🌌 Projeto: Buracos Negros
+ ## 🌌 Projeto: Buracos Negros
 
 Este projeto consiste no desenvolvimento de um site com temática astronômica, voltado à apresentação de conceitos relacionados a buracos negros de forma visual e estruturada.
 
