@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buracos Negros | Dashboard</title>
+
+  <link rel="stylesheet" href="../css/dashboards.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/sessao.js"></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <a href="index.html" class="logo">Buracos Negros</a>
+
+
+        <nav class="menu">
+
+            <div class="menu-extra">
+                <a href="login.html">PT</a>
+                <a href="login-en.html">EN</a>
+
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="cadastro.html" class="btn-login">Cadastro</a>
+            </div>
+        </nav>
+    </header>
+  <div class="janela">
+
+    <div class="header-left">
+      <h1>Buracos Negros</h1>
+
+      <div class="hello">
+        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+      </div>
+
+      <div class="btn-nav">
+        <h3>Comparação</h3>
+      </div>
+
+      <div class="btn-nav-white">
+        <a href="../index.html">
+          <h3>Home</h3>
+        </a>
+      </div>
+
+      <div class="btn-logout" onclick="limparSessao()">
+        <h3>Sair</h3>
+      </div>
+    </div>
+
+    <div class="dash dash-comparacao">
+  <div class="topo-dashboard">
+    <h2>Dashboard Comparativa</h2>
+    <p>Comparação entre a Terra e um buraco negro estelar.</p>
+  </div>
+
+  <div class="cards-comparacao">
+    <div class="card-comparacao">
+      <span>Massa</span>
+      <h3>≈ 10 massas solares</h3>
+      <p>Um buraco negro estelar pode ter várias vezes a massa do Sol.</p>
+    </div>
+
+    <div class="card-comparacao">
+      <span>Gravidade</span>
+      <h3>Extrema</h3>
+      <p>A gravidade é tão intensa que nem a luz consegue escapar.</p>
+    </div>
+
+    <div class="card-comparacao">
+      <span>Rotação</span>
+      <h3>Até 0.99c</h3>
+      <p>Alguns buracos negros podem girar próximos à velocidade da luz.</p>
+    </div>
+
+    <div class="card-comparacao">
+      <span>Tamanho</span>
+      <h3>≈ 60 km</h3>
+      <p>O horizonte de eventos pode ser pequeno, mas extremamente massivo.</p>
+    </div>
+  </div>
+  <div class="area-grafico-comparacao">
+  <h3>Comparação de grandezas</h3>
+  <canvas id="graficoComparacao"></canvas>
+</div>
+</div>
+  </div>
+  
+<script src="dashNova.js"></script>
+
+</body>
+
+</html>
+
+
