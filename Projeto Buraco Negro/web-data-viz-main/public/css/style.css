@@ -289,6 +289,67 @@ html {
   color: #ccc3d3;
 }
 
+.wormhole-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-top: 50px;
+}
+
+.wormhole-texto {
+  width: 50%;
+}
+
+.cadastro-chamada {
+  width: 420px;
+  min-height: 260px;
+  background: rgba(15, 15, 20, 0.82);
+  border: 1px solid rgba(218, 185, 255, 0.25);
+  box-shadow: 0 0 35px rgba(134, 82, 196, 0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 35px;
+  color: #e5e2e1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 150px auto 0;
+}
+
+.cadastro-chamada p {
+  font-size: 22px;
+  line-height: 1.4;
+  color: #e5e2e1;
+  margin-bottom: 24px;
+}
+
+.cadastro-chamada a {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #dab9ff, #8652c4);
+  color: #2b004d;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.cadastro-chamada a:hover {
+  transform: scale(1.03);
+  transition: 0.2s;
+}
+
+.tudo-roxo {
+  text-transform: uppercase;
+  color: #dab9ff;
+   font-weight: bold;
+  text-shadow: 0 0 10px rgba(218, 185, 255, 0.6);
+}
+
 @media (max-width: 900px) {
   .hero h1 {
     font-size: 48px;
@@ -321,10 +382,9 @@ html {
  width:50%;
 }
 
-.wormhole-img{
-width:100px !important;
-}
 
 
  
 }
+
+
