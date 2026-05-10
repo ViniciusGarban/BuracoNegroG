@@ -278,8 +278,8 @@ html {
 }
 
 .card {
-  background-color: rgba(53, 53, 52, 0.4);
-  border: 1px solid rgba(74, 68, 82, 0.3);
+  background-color: #36363566;
+  border: 1px solid #4a44524d;
   padding: 32px;
   border-radius: 10px;
 }
