@@ -96,7 +96,7 @@
   padding: 13px;
   border-radius: 10px;
   border: 1px solid rgba(218,185,255,0.35);
-  background: rgba(0,0,0,0.45);
+  background: #00000073;
   color: white;
   outline: none;
 }
@@ -135,7 +135,7 @@
   position: fixed;
   right: 30px;
   top: 100px;
-  background: rgba(20,20,25,.95);
+  background: #141419f2;
   color: white;
   border: 1px solid #ef4444;
   padding: 14px;
