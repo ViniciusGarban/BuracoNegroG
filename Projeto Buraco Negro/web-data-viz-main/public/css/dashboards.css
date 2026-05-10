@@ -348,9 +348,10 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
+  border-right: 1px solid rgba(218, 185, 255, 0.25);
+  background: #0e0e0e;
 }
+
 
 .dash-right {
   display: flex;
@@ -365,8 +366,10 @@ canvas {
 }
 
 .header-left h1 {
-  color: #32b9cd;
+  color: #dab9ff;
+  text-align: center;
 }
+
 
 .hello {
   width: 100%;
@@ -385,28 +388,31 @@ canvas {
 }
 
 .btn-nav {
-  width: 40%;
-  color: white;
-  background-color: #e6005a;
-  border-radius: 5px;
+  width: 55%;
+  color: #2b004d;
+  background: linear-gradient(to right, #dab9ff, #8652c4);
+  border-radius: 8px;
   text-align: center;
-  padding: 2% 5%;
+  padding: 10px 15px;
 }
+
 
 .btn-nav-white {
-  width: 40%;
-  background-color: white;
-  border: 3px solid #e6005a;
-  border-radius: 5px;
+  width: 55%;
+  background: transparent;
+  border: 1px solid rgba(218, 185, 255, 0.35);
+  border-radius: 8px;
   text-align: center;
-  padding: 2% 5%;
+  padding: 10px 15px;
 }
 
+
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: #ccc3d3;
   padding: 0;
   margin: 0;
 }
+
 
 .btn-nav h3,
 .btn-logout h3 {
@@ -415,17 +421,17 @@ canvas {
 }
 
 .btn-logout {
-  margin: 0;
-  padding: 0;
-  width: 20%;
-  background-color: #32b9cd;
-  color: white;
-  border-radius: 10px;
+  width: 55%;
+  background: rgba(15, 15, 20, 0.82);
+  border: 1px solid rgba(218, 185, 255, 0.25);
+  color: #dab9ff;
+  border-radius: 8px;
   text-align: center;
   padding: 10px 15px;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
   cursor: pointer;
 }
+
 
 .dash-comparacao {
   padding: 40px;
@@ -457,6 +463,9 @@ canvas {
   box-shadow: 0 0 24px rgba(134, 82, 196, 0.18);
   border-radius: 14px;
   padding: 26px;
+  display: flex;
+flex-direction: column;
+justify-content: space-between;
 }
 
 .card-comparacao span {
@@ -576,4 +585,27 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+.check-capitulo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 18px;
+  color: #ccc3d3;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+.check-capitulo input {
+  width: 16px;
+  height: 16px;
+  accent-color: #8652c4;
+  cursor: pointer;
+}
+
+.check-capitulo span {
+  color: #ccc3d3;
 }

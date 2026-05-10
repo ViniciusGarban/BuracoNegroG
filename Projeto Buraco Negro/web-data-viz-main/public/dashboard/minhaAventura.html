@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buracos Negros | Minha aventura</title>
+
+  <link rel="stylesheet" href="../css/dashboards.css">
+  <script src="../js/sessao.js"></script>
+</head>
+
+<body onload="validarSessao()">
+  <div class="janela">
+
+    <div class="header-left">
+      <h1>Buracos Negros</h1>
+
+      <div class="hello">
+        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+      </div>
+
+      <div class="btn-nav">
+        <h3>Minha aventura</h3>
+      </div>
+
+      <div class="btn-nav-white">
+        <a href="dashNova.html">
+          <h3>Comparação</h3>
+        </a>
+      </div>
+
+      <div class="btn-nav-white">
+        <a href="../index.html">
+          <h3>Home</h3>
+        </a>
+      </div>
+
+      <div class="btn-logout" onclick="limparSessao()">
+        <h3>Sair</h3>
+      </div>
+    </div>
+
+    <div class="dash dash-comparacao">
+      <div class="topo-dashboard">
+        <h2>Minha aventura</h2>
+        <p>Capítulos de estudo para entender como um buraco negro se forma e por que ele é tão extremo.</p>
+      </div>
+
+      <div class="cards-comparacao">
+
+        <div class="card-comparacao">
+          <span>Capítulo 1</span>
+          <h3>O nascimento de uma estrela massiva</h3>
+          <p>Antes de existir um buraco negro, existe uma estrela com muita massa consumindo combustível nuclear.</p>
+          <label class="check-capitulo">
+  <input type="checkbox">
+  <span>Já li este capítulo</span>
+</label>
+
+        </div>
+
+        <div class="card-comparacao">
+          <span>Capítulo 2</span>
+          <h3>O colapso gravitacional</h3>
+          <p>Quando a estrela perde equilíbrio, sua própria gravidade vence e comprime a matéria para dentro.</p>
+          <label class="check-capitulo">
+  <input type="checkbox">
+  <span>Já li este capítulo</span>
+</label>
+
+        </div>
+
+        <div class="card-comparacao">
+          <span>Capítulo 3</span>
+          <h3>Horizonte de eventos</h3>
+          <p>É a fronteira onde a velocidade de escape supera a velocidade da luz.</p>
+          <label class="check-capitulo">
+  <input type="checkbox">
+  <span>Já li este capítulo</span>
+</label>
+
+        </div>
+
+        <div class="card-comparacao">
+          <span>Capítulo 4</span>
+          <h3>Singularidade</h3>
+          <p>Região central onde a densidade tende ao infinito e as leis conhecidas da física deixam de explicar tudo.</p>
+          <label class="check-capitulo">
+  <input type="checkbox">
+  <span>Já li este capítulo</span>
+</label>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
