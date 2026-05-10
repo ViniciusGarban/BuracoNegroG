@@ -38,7 +38,7 @@
 .login {
   min-height: calc(100vh - 80px);
   background:
-    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.9)),
+    linear-gradient(#000000a6, #000000e6),
     url("../img/imagem-home.jpg");
   background-size: cover;
   background-position: center;
@@ -54,9 +54,9 @@
 
 .card {
   width: 420px;
-  background: rgba(15, 15, 20, 0.82);
-  border: 1px solid rgba(218,185,255,0.25);
-  box-shadow: 0 0 35px rgba(134,82,196,0.25);
+  background: #0f0f14d1;
+  border: 1px solid #dab9ff40;
+  box-shadow: 0 0 35px #8652c440;
   backdrop-filter: blur(10px);
   border-radius: 18px;
   padding: 35px;

@@ -310,9 +310,9 @@ html {
 .cadastro-chamada {
   width: 420px;
   min-height: 260px;
-  background: rgba(15, 15, 20, 0.82);
-  border: 1px solid rgba(218, 185, 255, 0.25);
-  box-shadow: 0 0 35px rgba(134, 82, 196, 0.25);
+  background: #0f0f14d1;
+  border: 1px solid #dab9ff40;
+  box-shadow: 0 0 35px #8652c440;
   backdrop-filter: blur(10px);
   border-radius: 18px;
   padding: 35px;
@@ -353,7 +353,7 @@ html {
   text-transform: uppercase;
   color: #dab9ff;
    font-weight: bold;
-  text-shadow: 0 0 10px rgba(218, 185, 255, 0.6);
+  text-shadow: 0 0 20px rgba(218, 185, 255, 0.6);
 }
 
 @media (max-width: 900px) {
