@@ -13,6 +13,12 @@
   <script src="../js/sessao.js"></script>
 </head>
 
+<script>
+  function marcarCapituloLido(numero, marcado) {
+    localStorage.setItem("capitulo_" + numero + "_lido", marcado);
+  }
+</script>
+
 <body onload="validarSessao()">
   <div class="janela">
 
@@ -28,16 +34,18 @@
       </div>
 
       <div class="btn-nav-white">
+  <a href="meusEstudos.html">
+    <h3>Meus estudos</h3>
+  </a>
+</div>
+
+      <div class="btn-nav-white">
         <a href="dashNova.html">
           <h3>Comparação</h3>
         </a>
       </div>
 
-      <div class="btn-nav-white">
-        <a href="../index.html">
-          <h3>Home</h3>
-        </a>
-      </div>
+      
 
       <div class="btn-logout" onclick="limparSessao()">
         <h3>Sair</h3>
@@ -59,7 +67,7 @@
   </button>
           <p>Antes de existir um buraco negro, existe uma estrela com muita massa consumindo combustível nuclear.</p>
           <label class="check-capitulo">
-  <input type="checkbox">
+  <input type="checkbox" onchange="marcarCapituloLido(1, this.checked)">
   <span>Já li este capítulo</span>
 </label>
 
@@ -71,7 +79,7 @@
             O colapso gravitacional</button>
           <p>Quando a estrela perde equilíbrio, sua própria gravidade vence e comprime a matéria para dentro.</p>
           <label class="check-capitulo">
-  <input type="checkbox">
+  <input type="checkbox" onchange="marcarCapituloLido(2, this.checked)">
   <span>Já li este capítulo</span>
 </label>
 
@@ -83,7 +91,7 @@
           Horizonte de eventos </button>  
           <p>É a fronteira onde a velocidade de escape supera a velocidade da luz.</p>
           <label class="check-capitulo">
-  <input type="checkbox">
+  <input type="checkbox" onchange="marcarCapituloLido(3, this.checked)">
   <span>Já li este capítulo</span>
 </label>
 
@@ -95,7 +103,7 @@
             Singularidade</button>
           <p>Região central onde a densidade tende ao infinito e as leis conhecidas da física deixam de explicar tudo.</p>
           <label class="check-capitulo">
-  <input type="checkbox">
+  <input type="checkbox" onchange="marcarCapituloLido(4, this.checked)">
   <span>Já li este capítulo</span>
 </label>
 

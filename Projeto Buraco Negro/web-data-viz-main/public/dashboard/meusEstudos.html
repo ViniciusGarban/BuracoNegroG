@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus estudos</title>
+      <link rel="stylesheet" href="../css/dashboards.css">
+      <script src="../js/sessao.js"></script>
+</head>
+<body onload="validarSessao(); carregarEstudos()">
+      <div class="janela">
+
+    <div class="header-left">
+      <h1>Buracos Negros</h1>
+
+      <div class="hello">
+        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+      </div>
+
+      <div class="btn-nav-white">
+        <a href="minhaAventura.html">
+          <h3>Minha aventura</h3>
+        </a>
+      </div>
+
+      <div class="btn-nav">
+        <h3>Meus estudos</h3>
+      </div>
+
+      <div class="btn-nav-white">
+        <a href="dashNova.html">
+          <h3>Comparação</h3>
+        </a>
+      </div>
+
+      <div class="btn-logout" onclick="limparSessao()">
+        <h3>Sair</h3>
+      </div>
+    </div>
+
+    <div class="dash dash-comparacao">
+      <div class="topo-dashboard">
+        <h2>Meus estudos</h2>
+        <p>Quizzes liberados conforme os capítulos que você já leu.</p>
+      </div>
+
+      <div class="cards-comparacao" id="lista_estudos"></div>
+    </div>
+
+  </div>
+  <script>
+    function carregarEstudos() {
+      let lista = document.getElementById("lista_estudos");
+
+      for (let i = 1; i <= 4; i++) {
+        let lido = localStorage.getItem("capitulo_" + i + "_lido");
+
+        if (lido == "true") {
+          lista.innerHTML += `
+            <div class="card-comparacao">
+              <span>Capítulo ${i}</span>
+              <h3>Quiz liberado</h3>
+              <p>Você já leu este capítulo. Agora pode responder ao quiz.</p>
+              <button class="botao-capitulo" onclick="abrirQuiz(${i})">
+                Responder quiz
+              </button>
+            </div>
+          `;
+        } else {
+          lista.innerHTML += `
+  <div class="card-comparacao card-quiz-bloqueado">
+    <span>Capítulo ${i}</span>
+    <h3>Quiz bloqueado</h3>
+    <p>Leia este capítulo em Minha aventura e marque como lido para liberar o quiz.</p>
+    <span class="status-quiz status-bloqueado">Bloqueado</span>
+  </div>
+`;
+        }
+      }
+    }
+
+   function abrirQuiz(capitulo) {
+  if (capitulo == 1) {
+    lista_estudos.innerHTML = `
+      <div class="area-estudo">
+        <h3>Quiz - Capítulo 1</h3>
+
+        <div class="questao">
+          <p>Questão 1: TESTE</p>
+
+          <label><input type="radio" name="q1" value="a"> a) ERRADO</label>
+          <label><input type="radio" name="q1" value="b"> b) ERRADO</label>
+          <label><input type="radio" name="q1" value="c"> c) CERTO</label>
+          <label><input type="radio" name="q1" value="d"> d) ERRADO</label>
+          <label><input type="radio" name="q1" value="e"> e) ERRADO</label>
+        </div>
+
+        <div class="questao">
+          <p>Questão 2: TESTE</p>
+
+          <label><input type="radio" name="q2" value="a"> a) ERRADO</label>
+          <label><input type="radio" name="q2" value="b"> b) CERTO</label>
+          <label><input type="radio" name="q2" value="c"> c) ERRADO</label>
+          <label><input type="radio" name="q2" value="d"> d) ERRADO</label>
+          <label><input type="radio" name="q2" value="e"> e) ERRADO</label>
+        </div>
+
+        <div class="questao">
+          <p>Questão 3: TESTE</p>
+
+          <label><input type="radio" name="q3" value="a"> a) ERRADO</label>
+          <label><input type="radio" name="q3" value="b"> b) ERRADO</label>
+          <label><input type="radio" name="q3" value="c"> c) ERRADO</label>
+          <label><input type="radio" name="q3" value="d"> d) CERTO</label>
+          <label><input type="radio" name="q3" value="e"> e) ERRADO</label>
+        </div>
+
+        <div class="questao">
+          <p>Questão 4: TESTE</p>
+
+          <label><input type="radio" name="q4" value="a"> a) CERTO</label>
+          <label><input type="radio" name="q4" value="b"> b) ERRADO</label>
+          <label><input type="radio" name="q4" value="c"> c) ERRADO</label>
+          <label><input type="radio" name="q4" value="d"> d) ERRADO</label>
+          <label><input type="radio" name="q4" value="e"> e) ERRADO</label>
+        </div>
+
+        <div class="questao">
+          <p>Questão 5: TESTE</p>
+
+          <label><input type="radio" name="q5" value="a"> a) ERRADO</label>
+          <label><input type="radio" name="q5" value="b"> b) ERRADO</label>
+          <label><input type="radio" name="q5" value="c"> c) ERRADO</label>
+          <label><input type="radio" name="q5" value="d"> d) ERRADO</label>
+          <label><input type="radio" name="q5" value="e"> e) CERTO</label>
+        </div>
+
+        <button class="botao-quiz" onclick="corrigirQuizCapitulo1()">
+          Finalizar quiz
+        </button>
+
+        <button class="botao-quiz" onclick="location.reload()">
+          Voltar
+        </button>
+
+        <p id="resultado_quiz"></p>
+      </div>
+    `;
+  }
+}
+  </script>
+</body>
+</html>
+<script>
+    function corrigirQuizCapitulo1() {
+  let respostasCertas = ["c", "b", "d", "a", "e"];
+  let acertos = 0;
+
+  for (let i = 0; i < respostasCertas.length; i++) {
+    let questao = document.querySelector("input[name='q" + (i + 1) + "']:checked");
+
+    if (questao != null && questao.value == respostasCertas[i]) {
+      acertos++;
+    }
+  }
+
+  resultado_quiz.innerHTML = "Você acertou " + acertos + " de 5 questões.";
+}
+</script>
