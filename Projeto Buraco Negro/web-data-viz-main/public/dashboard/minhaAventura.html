@@ -54,7 +54,9 @@
 
         <div class="card-comparacao">
           <span>Capítulo 1</span>
-          <h3>O nascimento de uma estrela massiva</h3>
+         <button class="botao-capitulo" onclick="mostrarCapitulo(1)">
+    O nascimento de uma estrela massiva
+  </button>
           <p>Antes de existir um buraco negro, existe uma estrela com muita massa consumindo combustível nuclear.</p>
           <label class="check-capitulo">
   <input type="checkbox">
@@ -65,7 +67,8 @@
 
         <div class="card-comparacao">
           <span>Capítulo 2</span>
-          <h3>O colapso gravitacional</h3>
+           <button class="botao-capitulo" onclick="mostrarCapitulo(2)">
+            O colapso gravitacional</button>
           <p>Quando a estrela perde equilíbrio, sua própria gravidade vence e comprime a matéria para dentro.</p>
           <label class="check-capitulo">
   <input type="checkbox">
@@ -76,7 +79,8 @@
 
         <div class="card-comparacao">
           <span>Capítulo 3</span>
-          <h3>Horizonte de eventos</h3>
+         <button class="botao-capitulo" onclick="mostrarCapitulo(3)">
+          Horizonte de eventos </button>  
           <p>É a fronteira onde a velocidade de escape supera a velocidade da luz.</p>
           <label class="check-capitulo">
   <input type="checkbox">
@@ -87,7 +91,8 @@
 
         <div class="card-comparacao">
           <span>Capítulo 4</span>
-          <h3>Singularidade</h3>
+          <button class="botao-capitulo" onclick="mostrarCapitulo(4)">
+            Singularidade</button>
           <p>Região central onde a densidade tende ao infinito e as leis conhecidas da física deixam de explicar tudo.</p>
           <label class="check-capitulo">
   <input type="checkbox">
@@ -97,9 +102,45 @@
         </div>
 
       </div>
+      <div class="area-estudo" id="area_estudo">
+  <h3>Escolha um capítulo</h3>
+  <p>Clique em um capítulo para abrir o conteúdo de estudo.</p>
+</div>
     </div>
 
   </div>
+  
 </body>
 
 </html>
+<script>
+  function mostrarCapitulo(numero) {
+    var titulo = "";
+    var texto = "";
+
+    if (numero == 1) {
+      titulo = "O nascimento de uma estrela massiva";
+      texto = "Buracos negros estelares começam com estrelas muito maiores que o Sol. Durante sua vida, essas estrelas produzem energia por fusão nuclear, equilibrando a força da gravidade.";
+    }
+
+    if (numero == 2) {
+      titulo = "O colapso gravitacional";
+      texto = "Quando o combustível da estrela acaba, ela perde a força que resistia à gravidade. O núcleo começa a colapsar e a matéria é comprimida em uma região extremamente pequena.";
+    }
+
+    if (numero == 3) {
+      titulo = "Horizonte de eventos";
+      texto = "O horizonte de eventos é o limite ao redor do buraco negro. Depois desse ponto, a velocidade necessária para escapar é maior que a velocidade da luz.";
+    }
+
+    if (numero == 4) {
+      titulo = "Singularidade";
+      texto = "A singularidade é a região central do buraco negro, onde a densidade se torna extremamente alta e as leis conhecidas da física deixam de funcionar bem.";
+    }
+
+    area_estudo.innerHTML = `
+      <h3>${titulo}</h3>
+      <p>${texto}</p>
+    `;
+  }
+</script>

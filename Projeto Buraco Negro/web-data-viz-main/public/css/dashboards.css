@@ -388,7 +388,7 @@ canvas {
 }
 
 .btn-nav {
-  width: 55%;
+  width: 70%;
   color: #2b004d;
   background: linear-gradient(to right, #dab9ff, #8652c4);
   border-radius: 8px;
@@ -398,7 +398,7 @@ canvas {
 
 
 .btn-nav-white {
-  width: 55%;
+  width: 70%;
   background: transparent;
   border: 1px solid rgba(218, 185, 255, 0.35);
   border-radius: 8px;
@@ -608,4 +608,40 @@ a {
 
 .check-capitulo span {
   color: #ccc3d3;
+}
+.botao-capitulo {
+  background: transparent;
+  border: none;
+  color: #dab9ff;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+  margin: 12px 0;
+  cursor: pointer;
+}
+
+.botao-capitulo:hover {
+  color: #f4e8ff;
+  text-shadow: 0 0 12px rgba(218, 185, 255, 0.8);
+}
+
+.area-estudo {
+  margin-top: 36px;
+  background: rgba(15, 15, 20, 0.9);
+  border: 1px solid rgba(218, 185, 255, 0.25);
+  box-shadow: 0 0 24px rgba(134, 82, 196, 0.18);
+  border-radius: 14px;
+  padding: 26px;
+}
+
+.area-estudo h3 {
+  color: #dab9ff;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.area-estudo p {
+  color: #ccc3d3;
+  font-size: 17px;
+  line-height: 1.6;
 }
