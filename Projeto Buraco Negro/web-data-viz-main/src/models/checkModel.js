@@ -15,6 +15,17 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
     return database.executar(instrucaoSql);
 }
 
+function buscarChecklist(fk_usuario, fk_capitulo) {
+
+    var instrucaoSql = `SELECT 
+        select fk_capitulo as capitulo, fk_usuario as usuario, lido FROM usuario_capitulo
+JOIN capitulo ON usuario_capitulo.fk_capitulo = ${fk_capitulo} 
+JOIN usuario ON usuario_capitulo.fk_usuario = ${fk_usuario};`
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 function buscarMedidasEmTempoReal(idAquario) {
 
     var instrucaoSql = `SELECT 

@@ -90,6 +90,7 @@ function abrirQuiz(capitulo) {
   }
 }
 
+
 function corrigirQuizCapitulo1() {
   let respostasCertas = ["c", "b", "d", "a", "e"];
   let acertos = 0;

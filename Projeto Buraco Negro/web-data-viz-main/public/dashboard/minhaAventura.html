@@ -67,7 +67,7 @@
   </button>
           <p>Antes de existir um buraco negro, existe uma estrela com muita massa consumindo combustível nuclear.</p>
           <label class="check-capitulo">
-  <input type="checkbox" onchange="marcarCapituloLido(1, this.checked)">
+  <input  id="input_check1"type="checkbox" onchange="marcarCapituloLido(1, this.checked)">
   <span>Já li este capítulo</span>
 </label>
 
@@ -79,7 +79,7 @@
             O colapso gravitacional</button>
           <p>Quando a estrela perde equilíbrio, sua própria gravidade vence e comprime a matéria para dentro.</p>
           <label class="check-capitulo">
-  <input type="checkbox" onchange="marcarCapituloLido(2, this.checked)">
+  <input  id="input_check2" type="checkbox" onchange="marcarCapituloLido(2, this.checked)">
   <span>Já li este capítulo</span>
 </label>
 
@@ -91,7 +91,7 @@
           Horizonte de eventos </button>  
           <p>É a fronteira onde a velocidade de escape supera a velocidade da luz.</p>
           <label class="check-capitulo">
-  <input type="checkbox" onchange="marcarCapituloLido(3, this.checked)">
+  <input id="input_check3" type="checkbox" onchange="marcarCapituloLido(3, this.checked)">
   <span>Já li este capítulo</span>
 </label>
 
@@ -103,7 +103,7 @@
             Singularidade</button>
           <p>Região central onde a densidade tende ao infinito e as leis conhecidas da física deixam de explicar tudo.</p>
           <label class="check-capitulo">
-  <input type="checkbox" onchange="marcarCapituloLido(4, this.checked)">
+  <input id="input_check4"type="checkbox" onchange="marcarCapituloLido(4, this.checked)">
   <span>Já li este capítulo</span>
 </label>
 
@@ -150,5 +150,27 @@
       <h3>${titulo}</h3>
       <p>${texto}</p>
     `;
+  }
+
+  function verificarCheck() { 
+   var capitulo1Var = input_check1.value
+   var capitulo2Var = input_check2.value
+   var capitulo3Var = input_check3.value
+   var capitulo4Var = input_check4.value
+
+   if (capitulo1Var == true){
+      
+   }
+   else if (capitulo2Var == true) {
+
+   } else if(capitulo3Var == true) {
+
+   } else if (capitulo4Var == true){
+
+   } else{
+
+   }
+
+
   }
 </script>
