@@ -18,8 +18,37 @@ function buscarChecklist(req, res) {
     });
 }
 
+function marcarChecklist(req, res) {
+    var fkUsuario = req.body.fkUsuarioServer;
+    var fkCapitulo = req.body.fkCapituloServer;
+    var lido = req.body.lidoServer;
+
+     if (fkUsuario == undefined) {
+        res.status(400).send("fkUsuario está undefined!");
+
+    } else if (fkCapitulo == undefined) {
+        res.status(400).send("fkCapitulo está undefined!");
+
+    } else if (lido == undefined) {
+        res.status(400).send("lido está undefined!");
+
+    } else {
+        checkModel.marcarChecklist(fkUsuario, fkCapitulo, lido)
+            .then(function (resultado) {
+                res.json(resultado);
+            })
+            .catch(function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao marcar o checklist.", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            });
+    }
+}
+
 
 
 module.exports = {
-    buscarChecklist
+    buscarChecklist,
+    marcarChecklist
+
 }

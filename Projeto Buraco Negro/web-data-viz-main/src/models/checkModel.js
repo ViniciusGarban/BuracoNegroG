@@ -13,8 +13,20 @@ function buscarChecklist(fk_usuario, fk_capitulo) {
     return database.executar(instrucaoSql);
 }
 
+function marcarChecklist(fk_usuario, fk_capitulo, lido) {
+    var instrucaoSql = `
+        INSERT INTO usuario_capitulo (fk_usuario, fk_capitulo, lido)
+        VALUES (${fk_usuario}, ${fk_capitulo}, ${lido})
+        ON DUPLICATE KEY UPDATE lido = ${lido};
+    `;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 
 
 module.exports = {
-   buscarChecklist
+   buscarChecklist,
+   marcarChecklist
 }

@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
- <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buracos Negros | Minha aventura</title>
+  <title>Document</title>
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buracos Negros | Minha aventura</title>
 
-  <link rel="stylesheet" href="../css/dashboards.css">
-  <script src="../js/sessao.js"></script>
+<link rel="stylesheet" href="../css/dashboards.css">
+<script src="../js/sessao.js"></script>
 </head>
 
-<script>
-  function marcarCapituloLido(numero, marcado) {
-    localStorage.setItem("capitulo_" + numero + "_lido", marcado);
-  }
-</script>
-
-<body onload="validarSessao()">
+<body onload="validarSessao(); carregarChecklist()">
   <div class="janela">
 
     <div class="header-left">
@@ -34,10 +29,10 @@
       </div>
 
       <div class="btn-nav-white">
-  <a href="meusEstudos.html">
-    <h3>Meus estudos</h3>
-  </a>
-</div>
+        <a href="meusEstudos.html">
+          <h3>Meus estudos</h3>
+        </a>
+      </div>
 
       <div class="btn-nav-white">
         <a href="dashNova.html">
@@ -45,7 +40,7 @@
         </a>
       </div>
 
-      
+
 
       <div class="btn-logout" onclick="limparSessao()">
         <h3>Sair</h3>
@@ -62,116 +57,236 @@
 
         <div class="card-comparacao">
           <span>Capítulo 1</span>
-         <button class="botao-capitulo" onclick="mostrarCapitulo(1)">
-    O nascimento de uma estrela massiva
-  </button>
+          <button class="botao-capitulo" onclick="mostrarCapitulo1()">
+            O nascimento de uma estrela massiva
+          </button>
           <p>Antes de existir um buraco negro, existe uma estrela com muita massa consumindo combustível nuclear.</p>
           <label class="check-capitulo">
-  <input  id="input_check1"type="checkbox" onchange="marcarCapituloLido(1, this.checked)">
-  <span>Já li este capítulo</span>
-</label>
+            <input id="input_check1" type="checkbox" onchange="marcarCapituloLido()">
+            <span>Já li este capítulo</span>
+          </label>
 
         </div>
 
         <div class="card-comparacao">
           <span>Capítulo 2</span>
-           <button class="botao-capitulo" onclick="mostrarCapitulo(2)">
+          <button class="botao-capitulo" onclick="mostrarCapitulo2()">
             O colapso gravitacional</button>
           <p>Quando a estrela perde equilíbrio, sua própria gravidade vence e comprime a matéria para dentro.</p>
           <label class="check-capitulo">
-  <input  id="input_check2" type="checkbox" onchange="marcarCapituloLido(2, this.checked)">
-  <span>Já li este capítulo</span>
-</label>
+            <input id="input_check2" type="checkbox" onchange="marcarCapituloLido()">
+            <span>Já li este capítulo</span>
+          </label>
 
         </div>
 
         <div class="card-comparacao">
           <span>Capítulo 3</span>
-         <button class="botao-capitulo" onclick="mostrarCapitulo(3)">
-          Horizonte de eventos </button>  
+          <button class="botao-capitulo" onclick="mostrarCapitulo3()">
+            Horizonte de eventos </button>
           <p>É a fronteira onde a velocidade de escape supera a velocidade da luz.</p>
           <label class="check-capitulo">
-  <input id="input_check3" type="checkbox" onchange="marcarCapituloLido(3, this.checked)">
-  <span>Já li este capítulo</span>
-</label>
+            <input id="input_check3" type="checkbox" onchange="marcarCapituloLido()">
+            <span>Já li este capítulo</span>
+          </label>
 
         </div>
 
         <div class="card-comparacao">
           <span>Capítulo 4</span>
-          <button class="botao-capitulo" onclick="mostrarCapitulo(4)">
+          <button class="botao-capitulo" onclick="mostrarCapitulo4()">
             Singularidade</button>
-          <p>Região central onde a densidade tende ao infinito e as leis conhecidas da física deixam de explicar tudo.</p>
+          <p>Região central onde a densidade tende ao infinito e as leis conhecidas da física deixam de explicar tudo.
+          </p>
           <label class="check-capitulo">
-  <input id="input_check4"type="checkbox" onchange="marcarCapituloLido(4, this.checked)">
-  <span>Já li este capítulo</span>
-</label>
+            <input id="input_check4" type="checkbox" onchange="marcarCapituloLido()">
+            <span>Já li este capítulo</span>
+          </label>
 
         </div>
 
       </div>
       <div class="area-estudo" id="area_estudo">
-  <h3>Escolha um capítulo</h3>
-  <p>Clique em um capítulo para abrir o conteúdo de estudo.</p>
-</div>
+        <h3>Escolha um capítulo</h3>
+        <p>Clique em um capítulo para abrir o conteúdo de estudo.</p>
+      </div>
     </div>
 
   </div>
-  
+
 </body>
 
 </html>
 <script>
- function mostrarCapitulo() {
-  var capitulo1Var = input_check1.checked;
-  var capitulo2Var = input_check2.checked;
-  var capitulo3Var = input_check3.checked;
-  var capitulo4Var = input_check4.checked;
 
-  var titulo = "";
-  var texto = "";
-
-  if (capitulo1Var == true) {
-    titulo = "O nascimento de uma estrela massiva";
-    texto = "Buracos negros estelares começam com estrelas muito maiores que o Sol. Durante sua vida, essas estrelas produzem energia por fusão nuclear, equilibrando a força da gravidade.";
-  } else if (capitulo2Var == true) {
-    titulo = "O colapso gravitacional";
-    texto = "Quando o combustível da estrela acaba, ela perde a força que resistia à gravidade. O núcleo começa a colapsar e a matéria é comprimida em uma região extremamente pequena.";
-  } else if (capitulo3Var == true) {
-    titulo = "Horizonte de eventos";
-    texto = "O horizonte de eventos é o limite ao redor do buraco negro. Depois desse ponto, a velocidade necessária para escapar é maior que a velocidade da luz.";
-  } else if (capitulo4Var == true) {
-    titulo = "Singularidade";
-    texto = "A singularidade é a região central do buraco negro, onde a densidade se torna extremamente alta e as leis conhecidas da física deixam de funcionar bem.";
-  } else {
-    titulo = "Nenhum capítulo selecionado";
-    texto = "Marque o checklist de um capítulo para visualizar o conteúdo.";
-  }
-
-  area_estudo.innerHTML = `
-    <h3>${titulo}</h3>
-    <p>${texto}</p>
+  function mostrarCapitulo1() {
+    area_estudo.innerHTML = `
+    <h3>O nascimento de uma estrela massiva</h3>
+    <p>Buracos negros estelares começam com estrelas muito maiores que o Sol. Durante sua vida, essas estrelas produzem energia por fusão nuclear, equilibrando a força da gravidade.</p>
   `;
-}
-
-  function verificarCheck() { 
-  var capitulo1Var = input_check1.checked;
-  var capitulo2Var = input_check2.checked;
-  var capitulo3Var = input_check3.checked;
-  var capitulo4Var = input_check4.checked;
-
-  if (capitulo1Var == true) {
-    alert("Capítulo 1 está marcado");
-  } else if (capitulo2Var == true) {
-    alert("Capítulo 2 está marcado");
-  } else if (capitulo3Var == true) {
-    alert("Capítulo 3 está marcado");
-  } else if (capitulo4Var == true) {
-    alert("Capítulo 4 está marcado");
-  } else {
-    alert("Nenhum capítulo marcado");
   }
+
+  function mostrarCapitulo2() {
+    area_estudo.innerHTML = `
+    <h3>O colapso gravitacional</h3>
+    <p>Quando o combustível da estrela acaba, ela perde a força que resistia à gravidade. O núcleo começa a colapsar e a matéria é comprimida em uma região extremamente pequena.</p>
+  `;
+  }
+
+  function mostrarCapitulo3() {
+    area_estudo.innerHTML = `
+    <h3>Horizonte de eventos</h3>
+    <p>O horizonte de eventos é o limite ao redor do buraco negro. Depois desse ponto, a velocidade necessária para escapar é maior que a velocidade da luz.</p>
+  `;
+  }
+
+  function mostrarCapitulo4() {
+    area_estudo.innerHTML = `
+    <h3>Singularidade</h3>
+    <p>A singularidade é a região central do buraco negro, onde a densidade se torna extremamente alta e as leis conhecidas da física deixam de funcionar bem.</p>
+  `;
+  }
+
+  function verificarCheck() {
+    var capitulo1Var = input_check1.checked;
+    var capitulo2Var = input_check2.checked;
+    var capitulo3Var = input_check3.checked;
+    var capitulo4Var = input_check4.checked;
+
+    if (capitulo1Var == true) {
+      alert("Capítulo 1 está marcado");
+    } else if (capitulo2Var == true) {
+      alert("Capítulo 2 está marcado");
+    } else if (capitulo3Var == true) {
+      alert("Capítulo 3 está marcado");
+    } else if (capitulo4Var == true) {
+      alert("Capítulo 4 está marcado");
+    } else {
+      alert("Nenhum capítulo marcado");
+    }
+  }
+
+  function marcarCapituloLido() {
+    var idUsuario = sessionStorage.ID_USUARIO;
+
+    var capitulo1Var = input_check1.checked;
+    var capitulo2Var = input_check2.checked;
+    var capitulo3Var = input_check3.checked;
+    var capitulo4Var = input_check4.checked;
+
+    var lidoCapitulo1 = 0
+    var lidoCapitulo2 = 0
+    var lidoCapitulo3 = 0
+    var lidoCapitulo4 = 0
+
+    if (capitulo1Var == true) {
+      lidoCapitulo1 = 1;
+    }
+    if (capitulo2Var == true) {
+      lidoCapitulo2 = 1;
+    }
+    if (capitulo3Var == true) {
+      lidoCapitulo3 = 1;
+    }
+    if (capitulo4Var == true) {
+      lidoCapitulo4 = 1;
+    }
+
+    fetch("/check/marcar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        fkUsuarioServer: idUsuario,
+        fkCapituloServer: 1,
+        lidoServer: lidoCapitulo1
+      })
+    });
+
+    fetch("/check/marcar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        fkUsuarioServer: idUsuario,
+        fkCapituloServer: 2,
+        lidoServer: lidoCapitulo2
+      })
+    });
+
+    fetch("/check/marcar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        fkUsuarioServer: idUsuario,
+        fkCapituloServer: 3,
+        lidoServer: lidoCapitulo3
+      })
+
+    });
+    fetch("/check/marcar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        fkUsuarioServer: idUsuario,
+        fkCapituloServer: 4,
+        lidoServer: lidoCapitulo4
+      })
+    });
+
+  }
+
+
+  function carregarChecklist() {
+  fetch("/check/checklist/" + sessionStorage.ID_USUARIO + "/1")
+    .then(function (resposta) {
+      if (resposta.status == 200) {
+        resposta.json().then(function (dados) {
+          if (dados[0].lido == 1) {
+            input_check1.checked = true;
+          }
+        });
+      }
+    });
+
+  fetch("/check/checklist/" + sessionStorage.ID_USUARIO + "/2")
+    .then(function (resposta) {
+      if (resposta.status == 200) {
+        resposta.json().then(function (dados) {
+          if (dados[0].lido == 1) {
+            input_check2.checked = true;
+          }
+        });
+      }
+    });
+
+  fetch("/check/checklist/" + sessionStorage.ID_USUARIO + "/3")
+    .then(function (resposta) {
+      if (resposta.status == 200) {
+        resposta.json().then(function (dados) {
+          if (dados[0].lido == 1) {
+            input_check3.checked = true;
+          }
+        });
+      }
+    });
+
+  fetch("/check/checklist/" + sessionStorage.ID_USUARIO + "/4")
+    .then(function (resposta) {
+      if (resposta.status == 200) {
+        resposta.json().then(function (dados) {
+          if (dados[0].lido == 1) {
+            input_check4.checked = true;
+          }
+        });
+      }
+    });
 }
 
-  
 </script>

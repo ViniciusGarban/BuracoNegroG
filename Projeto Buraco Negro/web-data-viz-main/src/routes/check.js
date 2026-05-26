@@ -7,5 +7,9 @@ router.get("/checklist/:fk_usuario/:fk_capitulo", function (req, res) {
     checkController.buscarChecklist(req, res);
 })
 
+router.post("/marcar", function (req, res) {
+    checkController.marcarChecklist(req, res);
+});
+
 
 module.exports = router;
