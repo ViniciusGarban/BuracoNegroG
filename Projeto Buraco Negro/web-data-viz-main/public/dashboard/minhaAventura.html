@@ -122,55 +122,56 @@
 
 </html>
 <script>
-  function mostrarCapitulo(numero) {
-    var titulo = "";
-    var texto = "";
+ function mostrarCapitulo() {
+  var capitulo1Var = input_check1.checked;
+  var capitulo2Var = input_check2.checked;
+  var capitulo3Var = input_check3.checked;
+  var capitulo4Var = input_check4.checked;
 
-    if (numero == 1) {
-      titulo = "O nascimento de uma estrela massiva";
-      texto = "Buracos negros estelares começam com estrelas muito maiores que o Sol. Durante sua vida, essas estrelas produzem energia por fusão nuclear, equilibrando a força da gravidade.";
-    }
+  var titulo = "";
+  var texto = "";
 
-    if (numero == 2) {
-      titulo = "O colapso gravitacional";
-      texto = "Quando o combustível da estrela acaba, ela perde a força que resistia à gravidade. O núcleo começa a colapsar e a matéria é comprimida em uma região extremamente pequena.";
-    }
-
-    if (numero == 3) {
-      titulo = "Horizonte de eventos";
-      texto = "O horizonte de eventos é o limite ao redor do buraco negro. Depois desse ponto, a velocidade necessária para escapar é maior que a velocidade da luz.";
-    }
-
-    if (numero == 4) {
-      titulo = "Singularidade";
-      texto = "A singularidade é a região central do buraco negro, onde a densidade se torna extremamente alta e as leis conhecidas da física deixam de funcionar bem.";
-    }
-
-    area_estudo.innerHTML = `
-      <h3>${titulo}</h3>
-      <p>${texto}</p>
-    `;
+  if (capitulo1Var == true) {
+    titulo = "O nascimento de uma estrela massiva";
+    texto = "Buracos negros estelares começam com estrelas muito maiores que o Sol. Durante sua vida, essas estrelas produzem energia por fusão nuclear, equilibrando a força da gravidade.";
+  } else if (capitulo2Var == true) {
+    titulo = "O colapso gravitacional";
+    texto = "Quando o combustível da estrela acaba, ela perde a força que resistia à gravidade. O núcleo começa a colapsar e a matéria é comprimida em uma região extremamente pequena.";
+  } else if (capitulo3Var == true) {
+    titulo = "Horizonte de eventos";
+    texto = "O horizonte de eventos é o limite ao redor do buraco negro. Depois desse ponto, a velocidade necessária para escapar é maior que a velocidade da luz.";
+  } else if (capitulo4Var == true) {
+    titulo = "Singularidade";
+    texto = "A singularidade é a região central do buraco negro, onde a densidade se torna extremamente alta e as leis conhecidas da física deixam de funcionar bem.";
+  } else {
+    titulo = "Nenhum capítulo selecionado";
+    texto = "Marque o checklist de um capítulo para visualizar o conteúdo.";
   }
+
+  area_estudo.innerHTML = `
+    <h3>${titulo}</h3>
+    <p>${texto}</p>
+  `;
+}
 
   function verificarCheck() { 
-   var capitulo1Var = input_check1.value
-   var capitulo2Var = input_check2.value
-   var capitulo3Var = input_check3.value
-   var capitulo4Var = input_check4.value
+  var capitulo1Var = input_check1.checked;
+  var capitulo2Var = input_check2.checked;
+  var capitulo3Var = input_check3.checked;
+  var capitulo4Var = input_check4.checked;
 
-   if (capitulo1Var == true){
-      
-   }
-   else if (capitulo2Var == true) {
-
-   } else if(capitulo3Var == true) {
-
-   } else if (capitulo4Var == true){
-
-   } else{
-
-   }
-
-
+  if (capitulo1Var == true) {
+    alert("Capítulo 1 está marcado");
+  } else if (capitulo2Var == true) {
+    alert("Capítulo 2 está marcado");
+  } else if (capitulo3Var == true) {
+    alert("Capítulo 3 está marcado");
+  } else if (capitulo4Var == true) {
+    alert("Capítulo 4 está marcado");
+  } else {
+    alert("Nenhum capítulo marcado");
   }
+}
+
+  
 </script>
