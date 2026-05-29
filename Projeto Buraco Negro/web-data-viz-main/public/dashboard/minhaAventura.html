@@ -244,6 +244,7 @@
 
 
   function carregarChecklist() {
+    
   fetch("/check/checklist/" + sessionStorage.ID_USUARIO + "/1")
     .then(function (resposta) {
       if (resposta.status == 200) {
