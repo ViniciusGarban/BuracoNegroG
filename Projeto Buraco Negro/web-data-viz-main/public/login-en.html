@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -16,16 +16,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
-<body>
-
-    <!--Header-->
+<body onload="mostrarDicaLogin()">
 
     <header class="cabecalho">
         <a href="index-en.html" class="logo">Black Holes</a>
 
-
         <nav class="menu">
-
             <div class="menu-extra">
                 <a href="login.html">PT</a>
                 <a href="login-en.html">EN</a>
@@ -36,16 +32,15 @@
         </nav>
     </header>
 
-
     <div class="login">
         <div class="alerta_erro">
             <div class="card_erro" id="cardErro">
                 <span id="mensagem_erro"></span>
             </div>
         </div>
-        <div class="container">
+        <div class="container login-container">
             <div class="card card-login">
-                <h2>Wellcome back!</h2>
+                <h2>Welcome back!</h2>
                 <div class="formulario">
                     <div class="campo">
                         <span>E-mail:</span>
@@ -58,7 +53,7 @@
                     <button class="botao" onclick="entrar()">Enter</button>
                 </div>
                 <div class="link-cadastro">
-                    <span>Don’t have an account?</span>
+                    <span>Do not have an account?</span>
                     <a href="cadastro-en.html">Click here!</a>
                 </div>
 
@@ -68,39 +63,40 @@
 
                 <div id="div_erros_login"></div>
             </div>
+
+            <div class="caixa-dica-login">
+                <h3>Space tip</h3>
+                <p id="dica_login"></p>
+            </div>
         </div>
     </div>
 
-    <!--footer inicio-->
     <div class="footer">
         <div class="container">
             <h4>Made with care by a student &hearts; SPTech &copy; 2026</h4>
             <span class="version">v1.0.0</span>
         </div>
     </div>
-    <!--footer fim-->
 
 </body>
 
 </html>
 
 <script>
-
-
     function entrar() {
         aguardar();
+        mostrarDicaLogin();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = "Fill in all fields.";
             finalizarAguardar();
             return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
+        } else {
+            setInterval(sumirMensagem, 5000);
         }
 
         console.log("FORM LOGIN: ", emailVar);
@@ -116,7 +112,7 @@
                 senhaServer: senhaVar
             })
         }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
+            console.log("ESTOU NO THEN DO entrar()!");
 
             if (resposta.ok) {
                 console.log(resposta);
@@ -129,30 +125,38 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/dashNova.html";
-                    }, 1000); // apenas para exibir o loading
-
+                        window.location = "./dashboard/dashNova-en.html";
+                    }, 1000);
                 });
 
             } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
+                console.log("There was an error while trying to log in!");
 
                 resposta.text().then(texto => {
                     console.error(texto);
                     finalizarAguardar(texto);
                 });
             }
-
         }).catch(function (erro) {
             console.log(erro);
-        })
+        });
 
         return false;
     }
 
     function sumirMensagem() {
-        cardErro.style.display = "none"
+        cardErro.style.display = "none";
     }
 
+    function mostrarDicaLogin() {
+        let numero = Math.random();
+
+        if (numero < 0.33) {
+            dica_login.innerHTML = "Tip: not even light can escape from a black hole.";
+        } else if (numero < 0.66) {
+            dica_login.innerHTML = "Tip: the event horizon is known as the point of no return.";
+        } else {
+            dica_login.innerHTML = "Tip: black holes can be born after the collapse of massive stars.";
+        }
+    }
 </script>

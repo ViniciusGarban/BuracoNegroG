@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Holes | My adventure</title>
+
+  <link rel="stylesheet" href="../css/dashboards.css">
+  <script src="../js/sessao.js"></script>
+</head>
+
+<body onload="validarSessao(); carregarChecklist()">
+  <div class="janela">
+
+    <div class="header-left">
+      <h1>Black Holes</h1>
+
+      <div class="hello">
+        <h3>Hello, <span id="b_usuario">user</span>!</h3>
+      </div>
+
+      <div class="btn-nav">
+        <h3>My adventure</h3>
+      </div>
+
+      <div class="btn-nav-white">
+        <a href="meusEstudos-en.html">
+          <h3>My studies</h3>
+        </a>
+      </div>
+
+      <div class="btn-nav-white">
+        <a href="dashNova-en.html">
+          <h3>Comparison</h3>
+        </a>
+      </div>
+
+      <div class="idiomas-dashboard"><a class="idioma-link" href="minhaAventura.html">PT</a>
+
+      <span class="idioma-ativo">EN</span></div>
+
+      <div class="btn-logout" onclick="limparSessao()">
+        <h3>Logout</h3>
+      </div>
+    </div>
+
+    <div class="dash dash-comparacao">
+      <div class="topo-dashboard">
+        <h2>My adventure</h2>
+        <p>Study chapters to understand how a black hole forms and why it is so extreme.</p>
+      </div>
+
+      <div class="cards-comparacao">
+        <div class="card-comparacao">
+          <span>Chapter 1</span>
+          <button class="botao-capitulo" onclick="mostrarCapitulo1()">
+            The birth of a massive star
+          </button>
+          <p>Before a black hole exists, there is a very massive star consuming nuclear fuel.</p>
+          <label class="check-capitulo">
+            <input id="input_check1" type="checkbox" onchange="marcarCapituloLido()">
+            <span>I have read this chapter</span>
+          </label>
+        </div>
+
+        <div class="card-comparacao">
+          <span>Chapter 2</span>
+          <button class="botao-capitulo" onclick="mostrarCapitulo2()">
+            Gravitational collapse
+          </button>
+          <p>When the star loses balance, its own gravity wins and compresses matter inward.</p>
+          <label class="check-capitulo">
+            <input id="input_check2" type="checkbox" onchange="marcarCapituloLido()">
+            <span>I have read this chapter</span>
+          </label>
+        </div>
+
+        <div class="card-comparacao">
+          <span>Chapter 3</span>
+          <button class="botao-capitulo" onclick="mostrarCapitulo3()">
+            Event horizon
+          </button>
+          <p>It is the boundary where escape velocity becomes greater than the speed of light.</p>
+          <label class="check-capitulo">
+            <input id="input_check3" type="checkbox" onchange="marcarCapituloLido()">
+            <span>I have read this chapter</span>
+          </label>
+        </div>
+
+        <div class="card-comparacao">
+          <span>Chapter 4</span>
+          <button class="botao-capitulo" onclick="mostrarCapitulo4()">
+            Singularity
+          </button>
+          <p>A central region where density tends toward infinity and known physics cannot explain everything.</p>
+          <label class="check-capitulo">
+            <input id="input_check4" type="checkbox" onchange="marcarCapituloLido()">
+            <span>I have read this chapter</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="area-estudo" id="area_estudo">
+        <h3>Choose a chapter</h3>
+        <p>Click a chapter to open the study content.</p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
+
+<script>
+  function mostrarCapitulo1() {
+    area_estudo.innerHTML = `
+      <h3>The birth of a massive star</h3>
+      <p>A black hole begins long before its final form. It starts with the birth of a massive star, created from huge clouds of gas and dust spread through space. Gravity pulls this material together into one region, increasing temperature and pressure.</p>
+      <p>As the core temperature rises, nuclear fusion begins. In this process, hydrogen atoms join to form helium, releasing a huge amount of energy. This energy makes stars shine and helps keep them balanced.</p>
+      <p>For most of its life, the star stays stable because of a balance between two forces. Gravity pulls matter inward, while the energy produced by fusion pushes matter outward.</p>
+      <p>Massive stars consume their fuel very quickly. The greater the mass, the faster the star burns its nuclear fuel. Because of this, massive stars live less time than smaller stars.</p>
+      <p>When the fuel begins to run out, the star enters a critical stage. Energy production decreases and the balance that supported the star becomes weaker. This is the first step toward the possible formation of a black hole.</p>
+    `;
+  }
+
+  function mostrarCapitulo2() {
+    area_estudo.innerHTML = `
+      <h3>Gravitational collapse</h3>
+      <p>After millions of years producing energy, the massive star reaches a point where it no longer has enough fuel to sustain nuclear reactions in its core. As a result, the pressure that fought against gravity decreases drastically.</p>
+      <p>Without the force generated by nuclear fusion, gravity begins to dominate the star's structure. Its enormous mass is pulled toward the center in a process called gravitational collapse.</p>
+      <p>During this collapse, the outer layers of the star can be thrown into space in an explosion called a supernova. These explosions are among the most energetic events observed in the universe.</p>
+      <p>While the outer part is expelled, the core keeps being compressed. Depending on the remaining mass, the core can become a neutron star or continue collapsing.</p>
+      <p>When no known force can stop the collapse, matter keeps being compressed and its density increases. This is when the basic structure of a black hole begins to appear.</p>
+    `;
+  }
+
+  function mostrarCapitulo3() {
+    area_estudo.innerHTML = `
+      <h3>Event horizon</h3>
+      <p>After the black hole forms, an extremely important region appears around it: the event horizon. This region is considered the boundary between the observable universe and the inside of the black hole.</p>
+      <p>The event horizon is not a physical surface that can be touched directly. It represents a mathematical limit defined by gravity.</p>
+      <p>At this point, the speed needed to escape gravity becomes greater than the speed of light. Since light is the fastest known thing in the universe, nothing can escape after crossing this limit.</p>
+      <p>For this reason, the event horizon is often called the point of no return. A distant observer would never see an object fully cross it.</p>
+      <p>Studying the event horizon is important because it is connected to General Relativity, time dilation and the behavior of light in intense gravitational fields.</p>
+    `;
+  }
+
+  function mostrarCapitulo4() {
+    area_estudo.innerHTML = `
+      <h3>Singularity</h3>
+      <p>At the center of a black hole there is a region called the singularity. It is one of the most mysterious ideas in modern physics because it represents an extreme environment.</p>
+      <p>According to Albert Einstein's General Relativity, all the mass of the black hole would be concentrated in an extremely small region.</p>
+      <p>As a result, density and the curvature of spacetime would increase to levels that are almost infinite.</p>
+      <p>Under these extreme conditions, many equations used by science stop giving useful answers. This means current theories cannot fully describe what happens inside the singularity.</p>
+      <p>Scientists believe a theory that unites General Relativity and Quantum Mechanics will be needed to understand this region completely.</p>
+    `;
+  }
+
+  function marcarCapituloLido() {
+    var idUsuario = sessionStorage.ID_USUARIO;
+
+    var capitulo1Var = input_check1.checked;
+    var capitulo2Var = input_check2.checked;
+    var capitulo3Var = input_check3.checked;
+    var capitulo4Var = input_check4.checked;
+
+    var lidoCapitulo1 = 0;
+    var lidoCapitulo2 = 0;
+    var lidoCapitulo3 = 0;
+    var lidoCapitulo4 = 0;
+
+    if (capitulo1Var == true) {
+      lidoCapitulo1 = 1;
+    }
+    if (capitulo2Var == true) {
+      lidoCapitulo2 = 1;
+    }
+    if (capitulo3Var == true) {
+      lidoCapitulo3 = 1;
+    }
+    if (capitulo4Var == true) {
+      lidoCapitulo4 = 1;
+    }
+
+    fetch("/check/marcar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ fkUsuarioServer: idUsuario, fkCapituloServer: 1, lidoServer: lidoCapitulo1 })
+    });
+
+    fetch("/check/marcar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ fkUsuarioServer: idUsuario, fkCapituloServer: 2, lidoServer: lidoCapitulo2 })
+    });
+
+    fetch("/check/marcar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ fkUsuarioServer: idUsuario, fkCapituloServer: 3, lidoServer: lidoCapitulo3 })
+    });
+
+    fetch("/check/marcar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ fkUsuarioServer: idUsuario, fkCapituloServer: 4, lidoServer: lidoCapitulo4 })
+    });
+  }
+
+  function carregarChecklist() {
+    fetch("/check/checklist/" + sessionStorage.ID_USUARIO + "/1")
+      .then(function (resposta) {
+        if (resposta.status == 200) {
+          resposta.json().then(function (dados) {
+            if (dados[0].lido == 1) {
+              input_check1.checked = true;
+            }
+          });
+        }
+      });
+
+    fetch("/check/checklist/" + sessionStorage.ID_USUARIO + "/2")
+      .then(function (resposta) {
+        if (resposta.status == 200) {
+          resposta.json().then(function (dados) {
+            if (dados[0].lido == 1) {
+              input_check2.checked = true;
+            }
+          });
+        }
+      });
+
+    fetch("/check/checklist/" + sessionStorage.ID_USUARIO + "/3")
+      .then(function (resposta) {
+        if (resposta.status == 200) {
+          resposta.json().then(function (dados) {
+            if (dados[0].lido == 1) {
+              input_check3.checked = true;
+            }
+          });
+        }
+      });
+
+    fetch("/check/checklist/" + sessionStorage.ID_USUARIO + "/4")
+      .then(function (resposta) {
+        if (resposta.status == 200) {
+          resposta.json().then(function (dados) {
+            if (dados[0].lido == 1) {
+              input_check4.checked = true;
+            }
+          });
+        }
+      });
+  }
+</script>
+

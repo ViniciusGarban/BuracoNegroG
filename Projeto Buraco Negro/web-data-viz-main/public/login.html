@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
-<body>
+<body onload="mostrarDicaLogin()">
 
     <!--Header-->
 
@@ -43,7 +43,7 @@
                 <span id="mensagem_erro"></span>
             </div>
         </div>
-        <div class="container">
+        <div class="container login-container">
             <div class="card card-login">
                 <h2>Olá de volta!</h2>
                 <div class="formulario">
@@ -68,6 +68,11 @@
 
                 <div id="div_erros_login"></div>
             </div>
+
+            <div class="caixa-dica-login">
+                <h3>Dica espacial</h3>
+                <p id="dica_login"></p>
+            </div>
         </div>
     </div>
 
@@ -89,6 +94,7 @@
 
     function entrar() {
         aguardar();
+        mostrarDicaLogin();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
@@ -155,5 +161,17 @@
     function sumirMensagem() {
         cardErro.style.display = "none"
     }
+
+    function mostrarDicaLogin() {
+    let numero = Math.random();
+
+    if (numero < 0.33) {
+        dica_login.innerHTML = "Dica: nem mesmo a luz consegue escapar de um buraco negro.";
+    } else if (numero < 0.66) {
+        dica_login.innerHTML = "Dica: o horizonte de eventos é conhecido como ponto sem retorno.";
+    } else {
+        dica_login.innerHTML = "Dica: buracos negros podem nascer após o colapso de estrelas massivas.";
+    }
+}
 
 </script>

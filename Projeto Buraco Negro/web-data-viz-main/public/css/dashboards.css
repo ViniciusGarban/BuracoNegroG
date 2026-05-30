@@ -420,6 +420,34 @@ canvas {
   padding: 0;
 }
 
+.idiomas-dashboard {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.idioma-link,
+.idioma-ativo {
+  min-width: 34px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.idioma-link {
+  color: #ccc3d3;
+  border: 1px solid rgba(218, 185, 255, 0.35);
+  background: transparent;
+}
+
+.idioma-ativo {
+  color: #2b004d;
+  background: linear-gradient(to right, #dab9ff, #8652c4);
+}
+
 .btn-logout {
   width: 55%;
   background: rgba(15, 15, 20, 0.82);
@@ -664,6 +692,17 @@ a {
   color: #94a3b8;
 }
 
+.questao {
+  margin-bottom: 20px;
+}
+
+.questao label {
+  display: block;
+  margin: 8px 0;
+  line-height: 1.4;
+  white-space: normal;
+  word-break: normal;
+}
 .botao-quiz {
   width: fit-content;
   margin-top: 20px;

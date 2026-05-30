@@ -1,104 +1,102 @@
 ﻿<!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buracos Negros | Meus estudos</title>
+  <title>Black Holes | My studies</title>
 
   <link rel="stylesheet" href="../css/dashboards.css">
   <script src="../js/sessao.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body onload="validarSessao(); carregarKPIs(); carregarEstudos(); carregarGraficoDesempenho()">
   <div class="janela">
 
     <div class="header-left">
-      <h1>Buracos Negros</h1>
+      <h1>Black Holes</h1>
 
       <div class="hello">
-        <h3>Olá, <span id="b_usuario">Usuário</span>!</h3>
+        <h3>Hello, <span id="b_usuario">User</span>!</h3>
       </div>
 
       <div class="btn-nav-white">
-        <a href="minhaAventura.html">
-          <h3>Minha aventura</h3>
+        <a href="minhaAventura-en.html">
+          <h3>My adventure</h3>
         </a>
       </div>
 
       <div class="btn-nav">
-        <h3>Meus estudos</h3>
+        <h3>My studies</h3>
       </div>
 
       <div class="btn-nav-white">
-        <a href="dashNova.html">
-          <h3>Comparação</h3>
+        <a href="dashNova-en.html">
+          <h3>Comparison</h3>
         </a>
       </div>
 
-      <div class="idiomas-dashboard"><span class="idioma-ativo">PT</span>
+      <div class="idiomas-dashboard"><a class="idioma-link" href="meusEstudos.html">PT</a>
 
-      <a class="idioma-link" href="meusEstudos-en.html">EN</a></div>
+      <span class="idioma-ativo">EN</span></div>
 
       <div class="btn-logout" onclick="limparSessao()">
-        <h3>Sair</h3>
+        <h3>Logout</h3>
       </div>
     </div>
 
     <div class="dash dash-comparacao">
       <div class="topo-dashboard">
-        <h2>Meus estudos</h2>
-        <p>Quizzes liberados conforme os capítulo que você já leu.</p>
+        <h2>My studies</h2>
+        <p>Quizzes are unlocked according to the chapters you have already read.</p>
       </div>
-      
 
       <div class="cards-comparacao" id="lista_estudos"></div>
-       <div class="legenda-kpi">
-        <h3>Legenda de desempenho</h3>
-        <p><span class="bolinha atencao"></span> 0 a 2 acertos: Atenção</p>
-        <p><span class="bolinha ok"></span> 3 a 4 acertos: OK</p>
-        <p><span class="bolinha otimo"></span> 5 acertos: Ótimo</p>
+
+      <div class="legenda-kpi">
+        <h3>Performance legend</h3>
+        <p><span class="bolinha atencao"></span> 0 to 2 correct answers: Attention</p>
+        <p><span class="bolinha ok"></span> 3 to 4 correct answers: OK</p>
+        <p><span class="bolinha otimo"></span> 5 correct answers: Great</p>
       </div>
+
       <div class="kpis-estudos">
         <div class="kpi-estudo" id="kpi_capitulo_1">
-          <span>Capitulo 1</span>
+          <span>Chapter 1</span>
           <h3 id="kpi_acertos_1">0/5</h3>
-          <p id="kpi_situacao_1">Atencão</p>
+          <p id="kpi_situacao_1">Attention</p>
         </div>
 
         <div class="kpi-estudo" id="kpi_capitulo_2">
-          <span>Capitulo 2</span>
+          <span>Chapter 2</span>
           <h3 id="kpi_acertos_2">0/5</h3>
-          <p id="kpi_situacao_2">Atencão</p>
+          <p id="kpi_situacao_2">Attention</p>
         </div>
 
         <div class="kpi-estudo" id="kpi_capitulo_3">
-          <span>Capitulo 3</span>
+          <span>Chapter 3</span>
           <h3 id="kpi_acertos_3">0/5</h3>
-          <p id="kpi_situacao_3">Atenção</p>
+          <p id="kpi_situacao_3">Attention</p>
         </div>
 
         <div class="kpi-estudo" id="kpi_capitulo_4">
-          <span>Capitulo 4</span>
+          <span>Chapter 4</span>
           <h3 id="kpi_acertos_4">0/5</h3>
-          <p id="kpi_situacao_4">Atenção</p>
+          <p id="kpi_situacao_4">Attention</p>
         </div>
       </div>
 
-     
-<div class="area-grafico-comparacao">
-        <h3>Desempenho nos quizzes</h3>
+      <div class="area-grafico-comparacao">
+        <h3>Quiz performance</h3>
         <canvas id="graficoDesempenho"></canvas>
       </div>
     </div>
 
   </div>
 
-  <script src="meusEstudos.js"></script>
+  <script src="meusEstudos-en.js"></script>
 </body>
 
 </html>
-
-
 

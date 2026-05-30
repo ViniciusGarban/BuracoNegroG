@@ -193,3 +193,31 @@
   transform: scale(1.05);
 }
 
+.login .login-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.caixa-dica-login {
+  width: 420px;
+  background: #0f0f14d1;
+  border: 1px solid #dab9ff40;
+  box-shadow: 0 0 25px #8652c440;
+  border-radius: 18px;
+  padding: 24px;
+  color: #e5e2e1;
+}
+
+.caixa-dica-login h3 {
+  color: #dab9ff;
+  margin-bottom: 12px;
+}
+
+.caixa-dica-login p {
+  color: #ccc3d3;
+  line-height: 1.5;
+}

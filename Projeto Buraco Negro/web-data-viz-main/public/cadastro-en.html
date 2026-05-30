@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title> Black Hole | Registration</title>
+  <title>Black Hole | Registration</title>
 
   <script src="./js/sessao.js"></script>
 
@@ -16,13 +16,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
-<body onload="listar()">
+<body>
   <header class="cabecalho">
     <a href="index-en.html" class="logo">Black Holes</a>
 
-
     <nav class="menu">
-
       <div class="menu-extra">
         <a href="cadastro.html">PT</a>
         <a href="cadastro-en.html">EN</a>
@@ -32,7 +30,6 @@
       </div>
     </nav>
   </header>
-  <!--header fim-->
 
   <div class="login">
     <div class="alerta_erro">
@@ -42,21 +39,19 @@
     </div>
     <div class="container">
       <div class="card card-cadastro">
-        <h2>Wellcome!</h2>
+        <h2>Welcome!</h2>
         <div class="formulario">
-
-         
           <div class="campo">
             <span>Name:</span>
-            <input id="nome_input" type="text" placeholder="Seu nome" />
+            <input id="nome_input" type="text" placeholder="Your name" />
           </div>
           <div class="campo">
             <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+            <input id="email_input" type="text" placeholder="myemail@provider.com" />
           </div>
           <div class="campo">
             <span>Password:</span>
-            <input id="senha_input" type="password" placeholder="******" />
+            <input id="senha_input" type="password" placeholder="******" oninput="validarSenha()" />
           </div>
           <div class="requisitos">
             <p id="req-tamanho">• Minimum 8 characters</p>
@@ -65,7 +60,7 @@
             <p id="req-especial">• Special character</p>
           </div>
           <div class="campo">
-            <span>Password Confirmation:</span>
+            <span>Password confirmation:</span>
             <input id="confirmacao_senha_input" type="password" placeholder="******" />
           </div>
           <button class="botao" onclick="cadastrar()">Register</button>
@@ -79,14 +74,12 @@
     </div>
   </div>
 
-  <!--footer inicio-->
   <div class="footer">
     <div class="container">
       <h4>Made with care by a student &hearts; SPTech &copy; 2026</h4>
       <span class="version">v1.0.0</span>
     </div>
   </div>
-  <!--footer fim-->
 </body>
 
 </html>
@@ -97,165 +90,144 @@
   const reqMinuscula = document.getElementById("req-minuscula");
   const reqEspecial = document.getElementById("req-especial");
 
-  senha_input.addEventListener("input", function () {
+  function validarSenha() {
     let senha = senha_input.value;
 
+    let temTamanho = false;
     let temMaiuscula = false;
     let temMinuscula = false;
     let temEspecial = false;
+    let especiais = "!@#$%&*";
+
+    if (senha.length >= 8) {
+      temTamanho = true;
+    }
+
+    if (senha != senha.toLowerCase()) {
+      temMaiuscula = true;
+    }
+
+    if (senha != senha.toUpperCase()) {
+      temMinuscula = true;
+    }
 
     for (let i = 0; i < senha.length; i++) {
       let letra = senha[i];
 
-      if (letra >= "A" && letra <= "Z") {
-        temMaiuscula = true;
-      }
-
-      if (letra >= "a" && letra <= "z") {
-        temMinuscula = true;
-      }
-
-      if (
-        !(letra >= "A" && letra <= "Z") &&
-        !(letra >= "a" && letra <= "z") &&
-        !(letra >= "0" && letra <= "9")
-      ) {
+      if (especiais.includes(letra)) {
         temEspecial = true;
       }
     }
 
-    reqTamanho.classList.toggle("valido", senha.length >= 8);
-    reqMaiuscula.classList.toggle("valido", temMaiuscula);
-    reqMinuscula.classList.toggle("valido", temMinuscula);
-    reqEspecial.classList.toggle("valido", temEspecial);
-  });
-
-  // Array para armazenar empresas cadastradas para validação de código de ativação 
-  
-
-  function cadastrar() {
-  let nomeVar = nome_input.value;
-  let emailVar = email_input.value;
-  let senhaVar = senha_input.value.trim();
-  let confirmacaoSenhaVar = confirmacao_senha_input.value;
-
-  let temArroba = false;
-  let temPonto = false;
-
-  for (let i = 0; i < emailVar.length; i++) {
-    if (emailVar[i] == "@") {
-      temArroba = true;
+    if (temTamanho == true) {
+      reqTamanho.classList.add("valido");
+    } else {
+      reqTamanho.classList.remove("valido");
     }
 
-    if (emailVar[i] == ".") {
-      temPonto = true;
+    if (temMaiuscula == true) {
+      reqMaiuscula.classList.add("valido");
+    } else {
+      reqMaiuscula.classList.remove("valido");
     }
+
+    if (temMinuscula == true) {
+      reqMinuscula.classList.add("valido");
+    } else {
+      reqMinuscula.classList.remove("valido");
+    }
+
+    if (temEspecial == true) {
+      reqEspecial.classList.add("valido");
+    } else {
+      reqEspecial.classList.remove("valido");
+    }
+
+    return temTamanho && temMaiuscula && temMinuscula && temEspecial;
   }
 
-  let temMaiuscula = false;
-  let temMinuscula = false;
-  let temEspecial = false;
+  function cadastrar() {
+    let nomeVar = nome_input.value;
+    let emailVar = email_input.value;
+    let senhaVar = senha_input.value.trim();
+    let confirmacaoSenhaVar = confirmacao_senha_input.value.trim();
 
-  for (let i = 0; i < senhaVar.length; i++) {
-    let letra = senhaVar[i];
+    let temArroba = false;
+    let temPonto = false;
 
-    if (letra >= "A" && letra <= "Z") {
-      temMaiuscula = true;
-    }
+    for (let i = 0; i < emailVar.length; i++) {
+      if (emailVar[i] == "@") {
+        temArroba = true;
+      }
 
-    if (letra >= "a" && letra <= "z") {
-      temMinuscula = true;
+      if (emailVar[i] == ".") {
+        temPonto = true;
+      }
     }
 
     if (
-      !(letra >= "A" && letra <= "Z") &&
-      !(letra >= "a" && letra <= "z") &&
-      !(letra >= "0" && letra <= "9")
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmacaoSenhaVar == ""
     ) {
-      temEspecial = true;
-    }
-  }
-
-  if (
-    nomeVar == "" ||
-    emailVar == "" ||
-    senhaVar == "" ||
-    confirmacaoSenhaVar == ""
-  ) {
-    cardErro.style.display = "block";
-    mensagem_erro.innerHTML = "Preencha todos os campos.";
-    finalizarAguardar();
-    return false;
-  }
-
-  if (!temArroba || !temPonto || !emailVar.endsWith(".com")) {
-    alert("Email inválido");
-    return false;
-  }
-
-  if (senhaVar.length < 8) {
-    alert("Senha precisa ter no mínimo 8 caracteres");
-    return false;
-  }
-
-  if (!temMaiuscula) {
-    alert("Senha precisa ter letra maiúscula");
-    return false;
-  }
-
-  if (!temMinuscula) {
-    alert("Senha precisa ter letra minúscula");
-    return false;
-  }
-
-  if (!temEspecial) {
-    alert("Senha precisa ter caractere especial");
-    return false;
-  }
-
-  if (senhaVar != confirmacaoSenhaVar) {
-    alert("As senhas não coincidem");
-    return false;
-  }
-
-  fetch("/usuarios/cadastrar", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      nomeServer: nomeVar,
-      emailServer: emailVar,
-      senhaServer: senhaVar,
-    }),
-  })
-    .then(function (resposta) {
-      console.log("resposta: ", resposta);
-
-      if (resposta.ok) {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML =
-          "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-        setTimeout(() => {
-          window.location = "login.html";
-        }, 2000);
-
-        
-        finalizarAguardar();
-      } else {
-        throw "Houve um erro ao tentar realizar o cadastro!";
-      }
-    })
-    .catch(function (resposta) {
-      console.log(`#ERRO: ${resposta}`);
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML = "Fill in all fields.";
       finalizarAguardar();
-    });
+      return false;
+    }
 
-  return false;
-}
+    if (!temArroba || !temPonto || !emailVar.endsWith(".com")) {
+      alert("Invalid email");
+      return false;
+    }
 
- 
+    if (validarSenha() == false) {
+      alert("Password must have at least 8 characters, an uppercase letter, a lowercase letter and a special character.");
+      return false;
+    }
+
+    if (senhaVar != confirmacaoSenhaVar) {
+      alert("Passwords do not match");
+      return false;
+    }
+
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+          mensagem_erro.innerHTML =
+            "Registration completed successfully! Redirecting to the login screen...";
+
+          setTimeout(() => {
+            window.location = "login-en.html";
+          }, 2000);
+
+          finalizarAguardar();
+        } else {
+          throw "There was an error while trying to register!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
+
   function sumirMensagem() {
     cardErro.style.display = "none";
   }

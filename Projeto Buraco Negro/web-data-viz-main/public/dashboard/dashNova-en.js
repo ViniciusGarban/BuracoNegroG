@@ -1,17 +1,17 @@
-﻿const ctx = document.getElementById('graficoComparacao');
+const ctx = document.getElementById('graficoComparacao');
 
 new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ['Massa', 'Gravidade', 'Rotação', 'Tamanho'],
+    labels: ['Mass', 'Gravity', 'Rotation', 'Size'],
     datasets: [
       {
-        label: 'Terra',
+        label: 'Earth',
         data: [1, 1, 1, 1],
         backgroundColor: '#3b82f6'
       },
       {
-        label: 'Buraco negro',
+        label: 'Black hole',
         data: [10, 100, 99, 60],
         backgroundColor: '#dab9ff'
       }
@@ -40,4 +40,3 @@ new Chart(ctx, {
     }
   }
 });
-
