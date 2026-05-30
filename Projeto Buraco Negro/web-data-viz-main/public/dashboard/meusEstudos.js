@@ -294,48 +294,7 @@ function abrirQuiz(capitulo) {
   }
 }
 
-function corrigirQuiz(capitulo) {
-  let respostasCertas = [];
 
-  if (capitulo == 1) {
-    respostasCertas = ["c", "d", "c", "d", "e"];
-  }
-
-  if (capitulo == 2) {
-    respostasCertas = ["c", "d", "c", "d", "e"];
-  }
-
-  if (capitulo == 3) {
-    respostasCertas = ["d", "c", "d", "e", "e"];
-  }
-
-  if (capitulo == 4) {
-    respostasCertas = ["e", "d", "d", "e", "e"];
-  }
-  let acertos = 0;
-
-  for (let i = 0; i < respostasCertas.length; i++) {
-    let questao = document.querySelector("input[name='q" + (i + 1) + "']:checked");
-
-    if (questao != null && questao.value == respostasCertas[i]) {
-      acertos++;
-    }
-  }
-
-  resultado_quiz.innerHTML = "Você acertou " + acertos + " de 5 questões. Clique em Atualizar dashboard para ver o gráfico.";
-
-  fetch("/desempenho/salvar", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      fkUsuarioServer: sessionStorage.ID_USUARIO,
-      fkCapituloServer: capitulo,
-      acertosServer: acertos
-    })
-  });
-}
 
 
 function carregarGraficoDesempenho() {
@@ -411,4 +370,48 @@ function carregarGraficoDesempenho() {
         }
       });
     });
+}
+function corrigirQuiz(capitulo) {
+  let respostasCertas = [];
+
+  if (capitulo == 1) {
+    respostasCertas = ["c", "d", "c", "d", "e"];
+  }
+
+  if (capitulo == 2) {
+    respostasCertas = ["c", "d", "c", "d", "e"];
+  }
+
+  if (capitulo == 3) {
+    respostasCertas = ["d", "c", "d", "e", "e"];
+  }
+
+  if (capitulo == 4) {
+    respostasCertas = ["e", "d", "d", "e", "e"];
+  }
+  let acertos = 0;
+
+  for (let i = 0; i < respostasCertas.length; i++) {
+    let questao = document.querySelector("input[name='q" + (i + 1) + "']:checked");
+
+    if (questao != null && questao.value == respostasCertas[i]) {
+      acertos++;
+    }
+  }
+
+  resultado_quiz.innerHTML = "Você acertou " + acertos + " de 5 questões. Clique em Atualizar dashboard para ver o gráfico.";
+
+  fetch("/desempenho/salvar", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      fkUsuarioServer: sessionStorage.ID_USUARIO,
+      fkCapituloServer: capitulo,
+      acertosServer: acertos
+    })
+  });
+
+   
 }
