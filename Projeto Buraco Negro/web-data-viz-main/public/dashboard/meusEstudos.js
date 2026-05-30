@@ -389,17 +389,29 @@ function corrigirQuiz(capitulo) {
   if (capitulo == 4) {
     respostasCertas = ["e", "d", "d", "e", "e"];
   }
+
   let acertos = 0;
 
   for (let i = 0; i < respostasCertas.length; i++) {
-    let questao = document.querySelector("input[name='q" + (i + 1) + "']:checked");
+    let alternativas = document.getElementsByName("q" + (i + 1));
 
-    if (questao != null && questao.value == respostasCertas[i]) {
-      acertos++;
+    for (let contador = 0; contador < alternativas.length; contador++) {
+      if (alternativas[contador].checked == true) {
+        if (alternativas[contador].value == respostasCertas[i]) {
+          acertos++;
+        }
+      }
     }
   }
 
-  resultado_quiz.innerHTML = "Você acertou " + acertos + " de 5 questões. Clique em Atualizar dashboard para ver o gráfico.";
+  let totalQuestoes = respostasCertas.length;
+  let valorDeCadaQuestao = 100 / totalQuestoes;
+  let porcentagem = acertos * valorDeCadaQuestao;
+
+  resultado_quiz.innerHTML =
+    "Você acertou " + acertos + " de " + totalQuestoes +
+    " questões. Aproveitamento: " + porcentagem +
+    "%. Clique em Atualizar dashboard para ver o gráfico.";
 
   fetch("/desempenho/salvar", {
     method: "POST",
@@ -412,6 +424,4 @@ function corrigirQuiz(capitulo) {
       acertosServer: acertos
     })
   });
-
-   
 }

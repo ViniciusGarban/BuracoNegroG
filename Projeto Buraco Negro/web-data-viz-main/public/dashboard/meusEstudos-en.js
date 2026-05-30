@@ -316,14 +316,20 @@ function corrigirQuiz(capitulo) {
   let acertos = 0;
 
   for (let i = 0; i < respostasCertas.length; i++) {
-    let questao = document.querySelector("input[name='q" + (i + 1) + "']:checked");
+    let alternativas = document.getElementsByName("q" + (i + 1));
 
-    if (questao != null && questao.value == respostasCertas[i]) {
-      acertos++;
+    for (let contador = 0; contador < alternativas.length; contador++) {
+      if (alternativas[contador].checked == true) {
+        if (alternativas[contador].value == respostasCertas[i]) {
+          acertos++;
+        }
+      }
     }
   }
 
-  resultado_quiz.innerHTML = "You got " + acertos + " out of 5 questions correct. Click Update dashboard to see the chart.";
+  resultado_quiz.innerHTML = "You got " + acertos + " out of " + totalQuestoes +
+  " questions correct. Score: " + porcentagem +
+  "%. Click Update dashboard to see the chart.";
 
   fetch("/desempenho/salvar", {
     method: "POST",
@@ -337,7 +343,7 @@ function corrigirQuiz(capitulo) {
     })
   });
 }
-
+   
 function carregarGraficoDesempenho() {
   fetch("/desempenho/buscar/" + sessionStorage.ID_USUARIO)
     .then(function (resposta) {
