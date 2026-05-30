@@ -1,4 +1,4 @@
-/* pagina mural */
+﻿/* pagina mural */
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
@@ -325,7 +325,7 @@ canvas {
   height: 100% !important;
 }
 
-/* PAGINA DOS GRÁFICOS 2023 */
+/* PAGINA DOS GRÃFICOS 2023 */
 
 .janela {
   display: flex;
@@ -701,4 +701,99 @@ a {
   color: #cbd5e1;
   background: rgba(148, 163, 184, 0.1);
   border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.kpis-estudos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.kpi-estudo {
+  background: rgba(15, 15, 20, 0.9);
+  border: 1px solid rgba(218, 185, 255, 0.25);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.kpi-estudo span {
+  color: #ccc3d3;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.kpi-estudo h3 {
+  color: #e5e2e1;
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.kpi-estudo p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+
+
+.kpi-atencao p {
+  color: #ef4444;
+}
+
+
+
+
+
+.kpi-ok p {
+  color: #bef264;
+}
+
+
+
+
+
+.kpi-otimo p {
+  color: #22c55e;
+}
+
+.legenda-kpi {
+  margin-top: 22px;
+  background: rgba(15, 15, 20, 0.9);
+  border: 1px solid rgba(218, 185, 255, 0.25);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.legenda-kpi h3 {
+  color: #dab9ff;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.legenda-kpi p {
+  color: #ccc3d3;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.bolinha {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.bolinha.atencao {
+  background: #ef4444;
+}
+
+.bolinha.ok {
+  background: #bef264;
+}
+
+.bolinha.otimo {
+  background: #22c55e;
 }

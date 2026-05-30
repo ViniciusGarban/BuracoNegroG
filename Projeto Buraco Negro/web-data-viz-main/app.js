@@ -21,6 +21,7 @@ var avisosRouter = require("./src/routes/avisos");
 var aquariosRouter = require("./src/routes/aquarios");
 var empresasRouter = require("./src/routes/empresas");
 var checkRouter = require("./src/routes/check");
+var desempenhoRouter = require("./src/routes/desempenho");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -34,6 +35,7 @@ app.use("/avisos", avisosRouter);
 app.use("/aquarios", aquariosRouter);
 app.use("/empresas", empresasRouter);
 app.use("/check", checkRouter);
+app.use("/desempenho", desempenhoRouter);
 
 
 app.listen(PORTA_APP, function () {
