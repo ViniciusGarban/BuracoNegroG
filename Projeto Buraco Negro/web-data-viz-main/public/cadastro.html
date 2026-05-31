@@ -54,6 +54,14 @@
             <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
           </div>
           <div class="campo">
+            <span>Nível de estudo:</span>
+            <select id="nivel_estudo_input">
+              <option value="iniciante">Iniciante</option>
+              <option value="intermediario">Intermediário</option>
+              <option value="avancado">Avançado</option>
+            </select>
+          </div>
+          <div class="campo">
             <span>Senha:</span>
             <input id="senha_input" type="password" placeholder="******" oninput="validarSenha()" />
           </div>
@@ -154,6 +162,7 @@
   function cadastrar() {
     let nomeVar = nome_input.value;
     let emailVar = email_input.value;
+    let nivelEstudoVar = nivel_estudo_input.value;
     let senhaVar = senha_input.value.trim();
     let confirmacaoSenhaVar = confirmacao_senha_input.value.trim();
 
@@ -205,6 +214,7 @@
       body: JSON.stringify({
         nomeServer: nomeVar,
         emailServer: emailVar,
+        nivelEstudoServer: nivelEstudoVar,
         senhaServer: senhaVar,
       }),
     })

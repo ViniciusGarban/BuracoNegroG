@@ -4,7 +4,7 @@ USE buraco_negro;
 CREATE TABLE usuario (
   id INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(50),
-  email VARCHAR(50),
+  email VARCHAR(50) UNIQUE,
   senha VARCHAR(50)
 );
 
@@ -17,7 +17,7 @@ CREATE TABLE perfil_usuario (
 
 CREATE TABLE capitulo (
   id INT PRIMARY KEY AUTO_INCREMENT,
-  titulo VARCHAR(100),
+  titulo VARCHAR(100) UNIQUE,
   descricao VARCHAR(255)
 );
 
